@@ -1,7 +1,7 @@
 # Capstone 2
 ## Conducting NLP on Amazon Store Review Data
 
-![amazon_logo.png](amazon_logo.png)
+![amazon_logo.png](https://github.com/Z-Palamara/Capstone_2/blob/master/Visualizations/amazon_logo.png)
 
 ## Source Data
 The Electronics Dataset can be downloaded from this link.
