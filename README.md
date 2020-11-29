@@ -32,10 +32,15 @@ I used Natural Language Processing (NLP) to solve this problem. More specificall
 ## Data Cleaning and EDA
 ### Initial Findings
 The first step I took in examining the data was to look at a simple count plot of reviews broken out by their respective 5-star rating.
+
 ![review count 5 star.png](https://github.com/Z-Palamara/Capstone_2/blob/master/Visualizations/review%20count%205%20star.png)
+
 This figure shows that most of the reviews are positive and overwhelmingly 5-stars. Additionally, I created a figure that depicts the count of negative and positive reviews. For this, I created a new binary target feature, which represents 1,2 and 3 star reviews as 0 or “Negative” and 4 and 5 star reviews as 1 or “Positive”.
+
 ![pos neg sentiment.png](https://github.com/Z-Palamara/Capstone_2/blob/master/Visualizations/pos%20neg%20sentiment.png)
+
 When viewing positive and negative review counts in time-series, there’s a clear jump in the volume of reviews around the start of 2013. Also, it appears that positive sentiment seems to diverge from negative sentiment with time.
+
 ![time_series_sentiment.png](https://github.com/Z-Palamara/Capstone_2/blob/master/Visualizations/time_series_sentiment.png)
 
 ## Text Feature Engineering
@@ -49,12 +54,16 @@ The next step in engineering the text features involved lemmatization. In its si
 The final step I took in engineering the review data involved stemming. Stemming simply removes prefixes and suffixes from tokenized words. Similar to Lemmatization, this is also done in an effort to reduce the size and complexity of the data. This was also executed using the WordNetLemmatizer class from the NLTK framework. 
 ### Extracting N-Gram Features 
 In the simplest of terms, N-grams are a statistical representation of the likelihood that a series of words appear in a text document. The letter “N” in N-grams represents the number of words in the series. For example, I created lists of the top  20 Bigrams and Trigrams of both positive and negative reviews. The results can be seen in the figures below.
+
 ![bigrams_pos.png](https://github.com/Z-Palamara/Capstone_2/blob/master/Visualizations/bigrams_pos.png)
 ![bigrams_neg.png](https://github.com/Z-Palamara/Capstone_2/blob/master/Visualizations/bigrams_neg.png)
+
 ### Review Length
 On average, negative reviews seem to be longer than positive reviews. Intuitively, it makes sense that people tend to be more vocal expressive about something that displeases them. Additionally, both positive and negative reviews seem to have right tail distributions.
+
 ![review_length_mean.png](https://github.com/Z-Palamara/Capstone_2/blob/master/Visualizations/review_length_mean.png)
 ![distributions.png](https://github.com/Z-Palamara/Capstone_2/blob/master/Visualizations/distributions.png)
+
 ### Word Cloud
 One of the most popular ways to visualize common words in an NLP project is through a word cloud. Pictured below is a word cloud containing the 20 most common bigrams found in positive reviews.
 ![word_cloud.png](https://github.com/Z-Palamara/Capstone_2/blob/master/Visualizations/word_cloud.png)
