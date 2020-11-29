@@ -73,6 +73,33 @@ One of the most popular ways to visualize common words in an NLP project is thro
 “Bootstrap sampling is a resampling method by independently sampling with replacement from an existing sample data with same sample size n, and performing inference among these resampled data.”  -  Lorna Yen, ["An Introduction to the Bootstrap Method"](https://towardsdatascience.com/an-introduction-to-the-bootstrap-method-58bcb51b4d60)
 Knowing that my classes of positive and negative reviews were unbalanced, I decided to use a bootstrap sampling method on the negative reviews to get a balanced number of positive and negative samples. I used the resample function from the sklearn framework to accomplish this. The code implementation can be seen (below).
 
+```
+# Step 1: Counting positive and negative reviews
+count_dict = df.binary_target.value_counts().to_dict() 
+>>> {0: 333121, 1: 1356067} # 0:Negative, 1:Positive
+```
+
+```
+# Step 2: Bootstrapping negative reviews
+neg = df[df['binary_target'] == 0]
+neg_bs = resample(neg, 
+                  replace=True, # Sample with replacement
+                  n_samples=count_dict[1], # Number of positive reviews
+                  random_state=123)
+```
+
+```
+# Step 3: Combining positive reviews and bootstrapped negative reviews
+pos = df[df['binary_target'] == 1]
+bs_df = pd.concat([pos, neg_bs])
+```
+
+```
+# Step 4: Getting new counts of positive and negative reviews
+bs_count_dict = bs_df.binary_target.value_counts().to_dict()
+>>> {0: 1356067, 1: 1356067} # 0:Negative, 1:Positive
+```
+
 Now the positive and negative review samples are balanced. This is especially a very important step for implementing Deep Learning models, because if your dataset is unbalanced, the model will learn to always pick the class that is overbalanced, which is not the goal.
 
 ### Shuffling Dataset
@@ -80,8 +107,11 @@ After balancing the dataset, the next step I took in the preprocessing phase was
 
 ## Text Modeling
 The first series of models that I developed were trained using only the review text to predict whether or not the review was positive or negative. To do this, I had to vectorize each word using the CountVectorizer() class from sklearn. “This implementation produces a sparse representation of the counts using” - [SKLearn (CountVectorizer)](https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html)
-
 After vectorizing the text features I split the data into training and testing sets. I used a test size of 20% and set the random_state equal to 123 for reproducibility.
+```
+# Creating training and test sets
+X_train, X_test, y_train, y_test = train_test_split(features, target, test_size=0.2, random_state=123)
+```
 
 ### Naive Bayes Classifier
 The first model that I decided to implement utilized a Multinomial Naive Bayes classifier. Naive Bayes is a commonly used algorithm that typically performs very well in NLP classification. “Naive Bayes classifiers are based on Bayes theorem, a probability is calculated for each category and the category with the highest probability will be the predicted category.”  - [Naive Bayes for text classification in Python](https://www.annytab.com/naive-bayes-for-text-classification-in-python/)
