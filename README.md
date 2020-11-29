@@ -32,7 +32,7 @@ I used Natural Language Processing (NLP) to solve this problem. More specificall
 ## Data Cleaning and EDA
 ### Initial Findings
 The first step I took in examining the data was to look at a simple count plot of reviews broken out by their respective 5-star rating.
-
+[5-Star Review Distributions](https://github.com/Z-Palamara/Capstone_2/blob/master/Visualizations/review%20count%205%20star.png)
 
 ## Files in Repository
 1.  - [Capstone 2 - Data Cleaning and EDA Google Colab Notebook](https://drive.google.com/file/d/1clk3MyDHAcwy9FYOKEdWg--82H4ijO1F/view?usp=sharing)
