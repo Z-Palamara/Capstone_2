@@ -1,6 +1,6 @@
 # Capstone_2
 Repository for my 2nd Springboard Capstone Project
-![amazon_logo.png](amazon_logo.png)
+![amazon_logo2.jpeg](amazon_logo2.jpeg)
 
 The Electronics Dataset can be downloaded from this link.
 https://nijianmo.github.io/amazon/index.html
