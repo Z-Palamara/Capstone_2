@@ -144,13 +144,13 @@ Based on the results, it seems like Logistic Regression may be the best classifi
     - **Please open this file in Google Colab to view all visualizations and interactive plots!**
     - Contains code used in Data Cleaning and EDA
     
-2.  - [Capstone 2 - Modeling](https://github.com/Z-Palamara/Capstone_2/blob/master/Capstone_2_Modeling.ipynb)
+2.  - [Capstone 2 - Modeling](https://github.com/Z-Palamara/Capstone_2/blob/master/Colab%20Notebooks/Capstone%202%20-%20Modeling.ipynb)
     - Contains code used to develop Machine Learning Models
   
-3.  - [Capstone 2 - Milestone Report 1](https://github.com/Z-Palamara/Capstone_2/blob/master/Capstone%202%20-%20Milestone%20Report%201.pdf)
+3.  - [Capstone 2 - Milestone Report 1](https://github.com/Z-Palamara/Capstone_2/blob/master/Milestone%20Reports/Capstone%202%20-%20Milestone%20Report%201.pdf)
     - Write up on progress at the halfway point of the project. (Before Modeling)
 
-4.  - [Capstone 2 - Milestone Report 2](https://github.com/Z-Palamara/Capstone_2/blob/master/Capstone%202%20-%20Milestone%20Report%202.pdf)
+4.  - [Capstone 2 - Milestone Report 2](https://github.com/Z-Palamara/Capstone_2/blob/master/Milestone%20Reports/Capstone%202%20-%20Milestone%20Report%202.pdf)
     - Final write up including Data Cleaning & EDA and Machine Learning Models
   
 
